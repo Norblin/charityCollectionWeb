@@ -1,20 +1,25 @@
 import React from 'react';
 import './scss/main.scss';
+import Link from "react-router-dom";
+import {HashRouter as Router, Route, Switch} from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Home from '../src/components/Home'
+import Login from './components/Login';
+import Register from './components/Register';
+
+
+function App (){
+    return(
+        <div className='appContainer'>
+          <Router>
+            <Switch>
+              <Route exact path='/' component={Home}/>
+              <Route path='/login' component={Login}/>
+              <Route path='/Register' component={Register}/>
+            </Switch>
+          </Router>
+        </div>
+    );
 }
-
 export default App;
+
